@@ -1,0 +1,27 @@
+{
+  "name": "cohort_feed",
+  "version": "1.0.0",
+  "description": "App to keep track of social media posted by my bootcamp cohort mates",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamuelLangenfeld/cohort_feed.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SamuelLangenfeld/cohort_feed/issues"
+  },
+  "homepage": "https://github.com/SamuelLangenfeld/cohort_feed#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "isomorphic-fetch": "^2.2.1"
+  }
+}
