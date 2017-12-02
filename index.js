@@ -1,10 +1,12 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const server = require('http').createServer(app);
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
+require('es6-promise').polyfill();
 const fetch = require('isomorphic-fetch');
+const cookieParser = require('cookie-parser')
 app.use(bodyParser.urlencoded({ extended: true }));
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
@@ -21,7 +23,17 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  res.render('index');
+  fetch('https://medium.com/@sunvision')
+    .then(function(response) {
+      if (response.status >= 400) {
+        throw new Error("Bad response from server");
+      }
+      return response;
+    })
+    .then(function(stories) {
+      console.log(stories.body);
+    });
+
 
 });
 
