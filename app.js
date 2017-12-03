@@ -62,8 +62,9 @@ app.post("/update", (req, res) => {
 
 
 });
+var port = process.env.PORT || CONFIG.port;
 
-server.listen(3000, 'localhost', () => {
+server.listen(port, () => {
   console.log('server listening');
 });
 
