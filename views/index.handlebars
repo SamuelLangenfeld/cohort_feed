@@ -1,6 +1,17 @@
 <h1>HERE WE GO!!!!</h1>
-<p>Title</p>
-{{title}}
 
-<p>Link</p>
-{{link}}
+
+
+{{#each developers as |developer|}}
+<div>
+  <h3>{{developer.firstName}} {{developer.lastName}}</h3>
+  <h4>Blog: {{developer.blog}} </h4>
+  <h5>Latest Article</h5>
+  {{#if developer.link}}
+  <a href="{{developer.link}}">
+  {{/if}}
+  <h5>{{developer.latest}}</h5></a>
+</div>
+<br>
+{{/each}}
+

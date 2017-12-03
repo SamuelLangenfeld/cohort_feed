@@ -13,8 +13,10 @@ app.set('view engine', 'handlebars');
 app.use(express.static(__dirname + '/public'));
 app.use(cookieParser());
 const session = require("express-session");
-const blogParser = require("./lib/blogParser.js");
-const developersArray = require("./lib/cohortMates");
+var fs = require('fs');
+let developersObj = JSON.parse(fs.readFileSync('./data/cohortMates.json'));
+const latest = require('./lib/fetchLatestPromise.js');
+console.log(developersObj);
 
 app.use(
   session({
@@ -25,31 +27,29 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  let params = {};
+  let params = { developers: [] };
 
-  //Need to do a forEach loop, each one doing a fetch promise
-  //Have to find a way to do Promise.all
-  //Then use that info
-  developersArray.forEach(developer => {
-    developer.link
-    developerObj = { developer: developer };
-  })
-  fetch('http://viking-blog.surge.sh/')
-    .then(function(response) {
-      if (response.status >= 400) {
-        throw new Error("Bad response from server");
-      }
-      return response;
-    })
-    .then(function(stories) {
-      stories.text().then(data => {
-        //We want to pass each url to blogParser
+  let latestUpdates = [];
+  let developerNameArray = Object.keys(developersObj);
+  developerNameArray.forEach(developerName => {
+    latestUpdates.push(latest(developersObj[developerName]));
+  });
 
-        let blogInfo = blogParser("http://viking-blog.surge.sh/", data);
-        res.render('index', blogInfo)
-
-      });
+  Promise.all(latestUpdates).then(developerUpdates => {
+    developerUpdates.forEach(updatedDeveloper => {
+      developersObj[updatedDeveloper.firstName] = updatedDeveloper;
     });
+    let developerString = JSON.stringify(developersObj, null, 2);
+    fs.writeFile('./data/cohortMates.json', developerString, (err) => {
+      if (err) {
+        throw err;
+      }
+    });
+    developerNameArray.forEach(developerName => {
+      params.developers.push(developersObj[developerName]);
+    });
+    res.render('index', params);
+  })
 
 
 });
