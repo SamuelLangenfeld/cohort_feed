@@ -1,16 +1,22 @@
-<h1>HERE WE GO!!!!</h1>
+<h2>Blog Feed</h2>
+<h2>Viking 2017 November Cohort</h2>
 
-
+<form action="/update" method="post">
+  <input type="submit" class="btn btn-primary btn-lg" value="Update to Latest Blogs">
+</form>
 
 {{#each developers as |developer|}}
-<div>
-  <h3>{{developer.firstName}} {{developer.lastName}}</h3>
-  <h4>Blog: {{developer.blog}} </h4>
-  <h5>Latest Article</h5>
-  {{#if developer.link}}
-  <a href="{{developer.link}}">
-  {{/if}}
-  <h5>{{developer.latest}}</h5></a>
+<div class="">
+  <h4>{{developer.firstName}} {{developer.lastName}}</h4>
+  <dl class="dl-horizontal">
+    <dt>Blog</dt>
+    <a href="{{developer.blog}}" target="_blank"><dd>{{developer.blog}}</dd></a>
+    <dt>Latest Article</dt>
+    {{#if developer.link}}
+    <a href="{{developer.link}}" target="_blank">
+    {{/if}}
+    <dd>{{developer.latest}}</dd></a>
+  </dl> 
 </div>
 <br>
 {{/each}}

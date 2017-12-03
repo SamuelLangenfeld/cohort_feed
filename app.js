@@ -16,7 +16,6 @@ const session = require("express-session");
 var fs = require('fs');
 let developersObj = JSON.parse(fs.readFileSync('./data/cohortMates.json'));
 const latest = require('./lib/fetchLatestPromise.js');
-console.log(developersObj);
 
 app.use(
   session({
@@ -26,7 +25,17 @@ app.use(
   })
 );
 
-app.get("/", (req, res) => {
+app.get('/', (req, res) => {
+  let params = { developers: [] };
+  let developerNameArray = Object.keys(developersObj);
+  developerNameArray.forEach(developerName => {
+    params.developers.push(developersObj[developerName]);
+  })
+  res.render('index', params);
+});
+
+app.post("/update", (req, res) => {
+  console.log('update in action');
   let params = { developers: [] };
 
   let latestUpdates = [];
@@ -48,7 +57,7 @@ app.get("/", (req, res) => {
     developerNameArray.forEach(developerName => {
       params.developers.push(developersObj[developerName]);
     });
-    res.render('index', params);
+    res.redirect('/');
   })
 
 

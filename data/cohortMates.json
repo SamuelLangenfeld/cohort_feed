@@ -27,13 +27,6 @@
     "latest": ">",
     "link": ""
   },
-  "Sam": {
-    "firstName": "Samuel",
-    "lastName": "Langenfeld",
-    "blog": "https://medium.com/@samlangenfeld",
-    "latest": "Understanding SQL Self Joins",
-    "link": "https://medium.com/@samlangenfeld/understanding-sql-self-joins-b39426404aa?source=user_profile---------1----------------"
-  },
   "Samuel": {
     "firstName": "Samuel",
     "lastName": "Langenfeld",
