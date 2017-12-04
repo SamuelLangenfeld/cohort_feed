@@ -4,36 +4,38 @@
   <input type="submit" class="btn btn-primary btn-lg" value="Update Latest Articles">
 </form>
 
-<div class="col-md-6 developers1">
-  {{#each developers1 as |developer|}}
-  <div class="">
-    <h4>{{developer.firstName}} {{developer.lastName}}</h4>
-    <dl class="dl-horizontal">
-      <dt>Blog</dt>
-      <a href="{{developer.blog}}" target="_blank"><dd>{{developer.blog}}</dd></a>
-      <dt>Latest Article</dt>
-      {{#if developer.link}}
-      <a href="{{developer.link}}" target="_blank">
-      {{/if}}
-      <dd>{{developer.latest}}</dd></a>
-    </dl> 
+<div class="row">
+  <div class="col-md-6 developers1">
+    {{#each developers1 as |developer|}}
+    <div class="">
+      <h4>{{developer.firstName}} {{developer.lastName}}</h4>
+      <dl class="dl-horizontal">
+        <dt>Blog</dt>
+        <a href="{{developer.blog}}" target="_blank"><dd>{{developer.blog}}</dd></a>
+        <dt>Latest Article</dt>
+        {{#if developer.link}}
+        <a href="{{developer.link}}" target="_blank">
+        {{/if}}
+        <dd>{{developer.latest}}</dd></a>
+      </dl> 
+    </div>
+    {{/each}}
   </div>
-  {{/each}}
-</div>
 
-<div class="col-md-6  developers2">
-  {{#each developers2 as |developer|}}
-  <div class="">
-    <h4>{{developer.firstName}} {{developer.lastName}}</h4>
-    <dl class="dl-horizontal">
-      <dt>Blog</dt>
-      <a href="{{developer.blog}}" target="_blank"><dd>{{developer.blog}}</dd></a>
-      <dt>Latest Article</dt>
-      {{#if developer.link}}
-      <a href="{{developer.link}}" target="_blank">
-      {{/if}}
-      <dd>{{developer.latest}}</dd></a>
-    </dl> 
+  <div class="col-md-6  developers2">
+    {{#each developers2 as |developer|}}
+    <div class="">
+      <h4>{{developer.firstName}} {{developer.lastName}}</h4>
+      <dl class="dl-horizontal">
+        <dt>Blog</dt>
+        <a href="{{developer.blog}}" target="_blank"><dd>{{developer.blog}}</dd></a>
+        <dt>Latest Article</dt>
+        {{#if developer.link}}
+        <a href="{{developer.link}}" target="_blank">
+        {{/if}}
+        <dd>{{developer.latest}}</dd></a>
+      </dl> 
+    </div>
+    {{/each}}
   </div>
-  {{/each}}
 </div>

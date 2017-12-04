@@ -33,5 +33,19 @@
     "blog": "https://medium.com/@samlangenfeld",
     "latest": "Understanding SQL Self Joins",
     "link": "https://medium.com/@samlangenfeld/understanding-sql-self-joins-b39426404aa?source=user_profile---------1----------------"
+  },
+  "Steven": {
+    "firstName": "Steven",
+    "lastName": "Li",
+    "blog": "https://medium.com/@steven_li_16834",
+    "latest": "Explanation/Tutorial of Common MongoDB Queries",
+    "link": "https://medium.com/@steven_li_16834/explanation-tutorial-of-common-mongodb-queries-7239f5c7351d?source=user_profile---------1----------------"
+  },
+  "Gene": {
+    "firstName": "Gene",
+    "lastName": "Tinderholm",
+    "blog": "https://medium.com/@tinderholmgene",
+    "latest": "Dealing with socket.io in node",
+    "link": "https://medium.com/@tinderholmgene/testing-with-jasmine-f356a8248268?source=user_profile---------1----------------"
   }
 }
