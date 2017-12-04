@@ -26,12 +26,15 @@ app.use(
 );
 
 app.get('/', (req, res) => {
-  let params = { developers: [] };
+  let developers = [];
   let developerNameArray = Object.keys(developersObj);
   developerNameArray.forEach(developerName => {
-    params.developers.push(developersObj[developerName]);
+    developers.push(developersObj[developerName]);
   })
-  res.render('index', params);
+  let half = developers.length / 2 + 1;
+  let developers1 = developers.slice(0, half);
+  let developers2 = developers.slice(half);
+  res.render('index', { developers1, developers2 });
 });
 
 app.post("/update", (req, res) => {
