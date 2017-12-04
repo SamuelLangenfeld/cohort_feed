@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
   developerNameArray.forEach(developerName => {
     developers.push(developersObj[developerName]);
   })
-  let half = developers.length / 2 + 1;
+  let half = Math.ceil(developers.length / 2);
   let developers1 = developers.slice(0, half);
   let developers2 = developers.slice(half);
   res.render('index', { developers1, developers2 });
