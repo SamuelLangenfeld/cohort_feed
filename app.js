@@ -62,10 +62,19 @@ app.post("/update", (req, res) => {
 
 
 });
-var port = process.env.PORT || CONFIG.port;
+var port = process.env.PORT || 3000;
+var host = 'localhost';
 
-server.listen(port, () => {
-  console.log('server listening');
+var args;
+process.env.NODE_ENV === 'production' ?
+  args = [port] :
+  args = [port, host];
+
+args.push(() => {
+  console.log(`Server listening: http://${ host }:${ port }`);
 });
+
+app.listen.apply(app, args);
+
 
 module.exports = app;
