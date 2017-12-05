@@ -23,9 +23,7 @@
   "Jeff": {
     "firstName": "Jeff",
     "lastName": "Dederick",
-    "blog": "https://medium.com/@Jsdederick",
-    "latest": ">",
-    "link": ""
+    "blog": "https://medium.com/@Jsdederick"
   },
   "Samuel": {
     "firstName": "Samuel",
