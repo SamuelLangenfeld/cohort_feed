@@ -1,49 +1,68 @@
 {
-  "Elias": {
+  "Elias":
+  {
     "firstName": "Elias",
     "lastName": "Hantula",
     "blog": "https://medium.com/@sunvision",
     "latest": "Exploring Redis and Other Express Functionality",
     "link": "https://medium.com/@sunvision/exploring-redis-and-other-express-functionality-8569a5c6a394?source=user_profile---------1----------------"
   },
-  "Johann": {
+  "Johann":
+  {
     "firstName": "Johann",
     "lastName": "Baptista",
     "blog": "http://viking-blog.surge.sh",
     "latest": "Web Sockets: concepts and implementation with Express",
     "link": "http://viking-blog.surge.sh/jekyll/update/2017/11/25/node-web-sockets.html"
   },
-  "Austin": {
+  "Austin":
+  {
     "firstName": "Austin",
     "lastName": "Smith",
     "blog": "https://austinwsmith.wordpress.com",
     "latest": "Delving into Databases",
     "link": "https://austinwsmith.wordpress.com/2017/12/04/delving-into-databases/"
   },
-  "Jeff": {
+  "Jeff":
+  {
     "firstName": "Jeff",
     "lastName": "Dederick",
     "blog": "https://medium.com/@Jsdederick"
   },
-  "Samuel": {
+  "Samuel":
+  {
     "firstName": "Samuel",
     "lastName": "Langenfeld",
     "blog": "https://medium.com/@samlangenfeld",
     "latest": "Understanding SQL Self Joins",
     "link": "https://medium.com/@samlangenfeld/understanding-sql-self-joins-b39426404aa?source=user_profile---------1----------------"
   },
-  "Steven": {
+  "Steven":
+  {
     "firstName": "Steven",
     "lastName": "Li",
     "blog": "https://medium.com/@steven_li_16834",
     "latest": "Explanation/Tutorial of Common MongoDB Queries",
     "link": "https://medium.com/@steven_li_16834/explanation-tutorial-of-common-mongodb-queries-7239f5c7351d?source=user_profile---------1----------------"
   },
-  "Gene": {
+  "Gene":
+  {
     "firstName": "Gene",
     "lastName": "Tinderholm",
     "blog": "https://medium.com/@tinderholmgene",
     "latest": "Dealing with socket.io in node",
     "link": "https://medium.com/@tinderholmgene/testing-with-jasmine-f356a8248268?source=user_profile---------1----------------"
+  },
+  "Hai":
+  {
+    "firstName": "Hai",
+    "lastName": "",
+    "blog": "https://memyselfandhai.wordpress.com/"
+  },
+  "Lakshmi":
+  {
+    "firstName": "Lakshmi",
+    "lastName": "Nishthala",
+    "blog": "https://medium.com/@lakshmi.nishthala/"
   }
 }
