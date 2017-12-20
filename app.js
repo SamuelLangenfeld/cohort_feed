@@ -25,6 +25,23 @@ app.use(
   })
 );
 
+app.get('/', async (req, res)=>{
+  let params = { developers: [] };
+
+  let latestUpdates = [];
+  let developerNameArray = Object.keys(developersObj);
+  developerNameArray.forEach(developerName => {
+    latestUpdates.push(latest(developersObj[developerName]));
+  });
+  let updatedDevelopers = await Promise.all(latestUpdates);
+  let half = Math.ceil(updatedDevelopers.length / 2);
+  let developers1 = updatedDevelopers.slice(0, half);
+  let developers2 = updatedDevelopers.slice(half);
+  res.render('index', { developers1, developers2 });
+});
+
+
+/*
 app.get('/', (req, res) => {
   let developers = [];
   let developerNameArray = Object.keys(developersObj);
@@ -65,6 +82,8 @@ app.post("/update", (req, res) => {
 
 
 });
+*/
+
 var port = process.env.PORT || 3000;
 var host = 'localhost';
 
