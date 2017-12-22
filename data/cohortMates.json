@@ -64,5 +64,11 @@
     "firstName": "Lakshmi",
     "lastName": "Nishthala",
     "blog": "https://medium.com/@lakshmi.nishthala/"
+  },
+  "Edwin":
+  {
+    "firstName":"Edwin",
+    "lastName": "Yung",
+    "blog": "http://www.edwinyung.com/"
   }
 }
